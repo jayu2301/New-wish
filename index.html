@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +12,8 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 </head>
 
@@ -63,9 +64,8 @@ Click Here Madam jii
 </button>
 
 <!-- AUDIO -->
-<audio id="birthdaySong" controls>
+<audio id="birthdaySong">
 <source src="./song.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
 </audio>
 
 </div>
@@ -115,10 +115,11 @@ Your browser does not support the audio element.
 <h3>To You!</h3>
 
 <h2>
-Happy Birthday to the most important person in my life ❤️  
-I don’t think words will ever be enough to explain how much you mean to me.  
-Today is your special day and I hope it is filled with love, happiness and lots of smiles.  
-Love you always 💕
+Happy Birthday to the most important person in my life 🫠  
+I don’t think words will ever be enough to explain how much you mean to me ❤️‍🩹 
+Today is your special day, but I feel like....
+ I’m the lucky one because I get to know someone as amazing and charming as you .💕
+and...I lovee you as much as no one can do to someone my love 💕😚
 </h2>
 
 </div>
@@ -133,29 +134,27 @@ Love you always 💕
 
 let song = document.getElementById("birthdaySong");
 
-let mailButton = document.getElementById("btn__letter");
-let boxMail = document.querySelector(".boxMail");
-let closeBtn = document.querySelector(".fa-xmark");
+let mailBox = document.querySelector('.mail')
+let boxmail = document.querySelector('.boxMail')
+let close = document.querySelector('.fa-xmark')
 
-mailButton.addEventListener("click", function(){
+mailBox.onclick = function(){
 
-song.play().catch(function(error){
-console.log("Audio could not start:", error);
-});
+song.play();   // 🎵 PLAY SONG
 
-boxMail.classList.add("active");
+mailBox.classList.toggle('active')
+boxmail.classList.add('active')
 
-});
+}
 
-closeBtn.addEventListener("click", function(){
+close.onclick = function(){
 
-boxMail.classList.remove("active");
+boxmail.classList.remove('active')
 
-});
+}
 
 </script>
 
 </body>
 
 </html>
-```
