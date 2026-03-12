@@ -19,9 +19,7 @@
 </head>
 
 <body>
-    <audio id="birthdaySong">
-<source src="./song.mp3" type="audio/mpeg">
-</audio>
+   
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
@@ -61,8 +59,22 @@
                             <i class="fa-regular fa-envelope"></i>
                         </div>
                     </button>
-            
+            <audio id="birthdaySong" preload="auto">
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+                   
                 </div>
+                 <script>
+
+const btn = document.getElementById("btn__letter");
+const song = document.getElementById("birthdaySong");
+
+btn.addEventListener("click", function(){
+  song.currentTime = 0;
+  song.play();
+});
+
+</script>
             </div>
             <div class="right">
                 <div class="box__account">
@@ -162,7 +174,7 @@
 
 </body>
 <script>
-    let datetxt = "14 Mar";
+   let datetxt = "14 Mar";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
     let titleLetter = "To you";
     let charArrDate = datetxt.split('');
