@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +13,6 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 </head>
 
@@ -64,8 +63,9 @@ Click Here Madam jii
 </button>
 
 <!-- AUDIO -->
-<audio id="birthdaySong">
-<source src="song.mp3" type="audio/mpeg">
+<audio id="birthdaySong" controls>
+<source src="./song.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
 </audio>
 
 </div>
@@ -133,27 +133,29 @@ Love you always 💕
 
 let song = document.getElementById("birthdaySong");
 
-let mailBox = document.querySelector('.mail')
-let boxmail = document.querySelector('.boxMail')
-let close = document.querySelector('.fa-xmark')
+let mailButton = document.getElementById("btn__letter");
+let boxMail = document.querySelector(".boxMail");
+let closeBtn = document.querySelector(".fa-xmark");
 
-mailBox.onclick = function(){
+mailButton.addEventListener("click", function(){
 
-song.play();   // 🎵 PLAY SONG
+song.play().catch(function(error){
+console.log("Audio could not start:", error);
+});
 
-mailBox.classList.toggle('active')
-boxmail.classList.add('active')
+boxMail.classList.add("active");
 
-}
+});
 
-close.onclick = function(){
+closeBtn.addEventListener("click", function(){
 
-boxmail.classList.remove('active')
+boxMail.classList.remove("active");
 
-}
+});
 
 </script>
 
 </body>
 
 </html>
+```
