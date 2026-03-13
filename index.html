@@ -69,6 +69,22 @@
                    
                 </div>
                  <script>
+                     const introSong = document.getElementById("introSong");
+const btn = document.getElementById("btn__letter");
+const birthdaySong = document.getElementById("birthdaySong");
+
+// play intro music on first touch (mobile fix)
+document.body.addEventListener("click", function startIntro(){
+    introSong.play();
+    document.body.removeEventListener("click", startIntro);
+});
+
+// when button clicked
+btn.addEventListener("click", function(){
+    introSong.pause();
+    birthdaySong.currentTime = 0;
+    birthdaySong.play();
+});
                     const introSong = document.getElementById("introSong");
 const birthdaySong = document.getElementById("birthdaySong");
 const btn = document.getElementById("btn__letter");
