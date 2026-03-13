@@ -59,38 +59,31 @@
                             <i class="fa-regular fa-envelope"></i>
                         </div>
                     </button>
-                    <audio id="introSong" autoplay loop>
+                  <audio id="introSong" loop>
   <source src="soni.mp3" type="audio/mpeg">
 </audio>
-            <audio id="birthdaySong" preload="auto">
-<source src="song.mp3" type="audio/mpeg">
+
+<audio id="birthdaySong" preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
                    
                 </div>
                  <script>
-                     const introSong = document.getElementById("introSong");
-const btn = document.getElementById("btn__letter");
+                    const introSong = document.getElementById("introSong");
 const birthdaySong = document.getElementById("birthdaySong");
+const btn = document.getElementById("btn__letter");
 
-// play intro music on first touch (mobile fix)
-document.body.addEventListener("click", function startIntro(){
+// Start intro music on first touch (mobile compatible)
+document.addEventListener("touchstart", function playIntro() {
     introSong.play();
-    document.body.removeEventListener("click", startIntro);
+    document.removeEventListener("touchstart", playIntro);
 });
 
-// when button clicked
-btn.addEventListener("click", function(){
+// Button click → stop intro and start birthday song
+btn.addEventListener("click", function () {
     introSong.pause();
     birthdaySong.currentTime = 0;
     birthdaySong.play();
-});
-
-const btn = document.getElementById("btn__letter");
-const song = document.getElementById("birthdaySong");
-
-btn.addEventListener("click", function(){
-  song.currentTime = 0;
-  song.play();
 });
 
 
