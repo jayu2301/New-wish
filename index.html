@@ -59,6 +59,9 @@
                             <i class="fa-regular fa-envelope"></i>
                         </div>
                     </button>
+                    <audio id="introSong" autoplay loop>
+  <source src="intro.mp3" type="audio/mpeg">
+</audio>
             <audio id="birthdaySong" preload="auto">
 <source src="song.mp3" type="audio/mpeg">
 </audio>
@@ -67,11 +70,19 @@
                  <script>
 
 const btn = document.getElementById("btn__letter");
-const song = document.getElementById("birthdaySong");
+
+const introSong = document.getElementById("introSong");
+const birthdaySong = document.getElementById("birthdaySong");
 
 btn.addEventListener("click", function(){
-  song.currentTime = 0;
-  song.play();
+
+  // stop intro music
+  introSong.pause();
+
+  // start birthday song
+  birthdaySong.currentTime = 0;
+  birthdaySong.play();
+
 });
 
 </script>
